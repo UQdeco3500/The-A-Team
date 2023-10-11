@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <header className='header'>
-      <h2><Link to='/' className='logoCampusfit'>Campus Fit</Link></h2>
+      <h2><Link to='/' className='logoCampusfit' style={{textDecoration:'none'}}>Campus Fit</Link></h2>
       <Link to="/" className='headerButtons'>Home</Link>
       <button className='headerButtons'>Services</button>
       <button className='headerButtons'>About Us</button>
