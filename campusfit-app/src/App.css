@@ -91,44 +91,32 @@
   background-color: #00FF00;
   border-radius: 50%; 
 }
-/* Appropriate styling for the day-schedule container */
-.day-schedule {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #1f1010;;
-  border: 1px solid #ccc;
-  color:white;
+/* App styling */
+/* ... Your existing styles ... */
+
+/* Custom styling for ScheduleScreen and react-big-calendar */
+
+/* Set background color to black */
+.schedule-screen {
+  background-color: white;
 }
 
-/* Styling for the day name */
-.day-schedule h2 {
-  margin: 0;
-  font-size: 18px;
+/* Set font color to red for day headers */
+.custom-day-header {
+  color: rgb(0, 0, 0);
 }
 
-/* Styling for the time slots container */
-.time-slots {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+/* Style individual day cells in the calendar */
+.rbc-day-bg {
+  background-color: #f7f7f7;
+  border: 1px solid green;
 }
 
-/* Styling for individual time slots */
-.time-slot {
-  padding: 5px 10px;
-  background-color: #007bff;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+/* Style the selected time slots */
+.selected-time-slot {
+  /* //color-scheme:green ; */
+  background-color: #00FF00;
+  color: red;
 }
 
-/* Styling for selected time slots */
-.time-slot.selected {
-  background-color: #ff5722; /* Change the color as desired */
-}
+/* Additional custom styles can be added here */
