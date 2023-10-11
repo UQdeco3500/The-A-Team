@@ -25,7 +25,7 @@ function WorkoutPlan() {
     const start = new Date(`01/01/2000 ${startTime}`);
     const end = new Date(`01/01/2000 ${endTime}`);
     const duration = (end - start) / (60 * 60 * 1000); // Duration in hours
-    return duration;
+    alert (duration);
   };
 
   // Define a function to assign workouts based on duration

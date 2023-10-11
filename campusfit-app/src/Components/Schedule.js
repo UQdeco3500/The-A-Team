@@ -39,6 +39,17 @@ function ScheduleScreen() {
 
   const localizer = momentLocalizer(moment);
 
+  // Calculate the total duration for each day
+  const dayDurations = {};
+  daysOfWeek.forEach((day) => {
+    if (selectedTimeSlots[day]) {
+      const startTime = moment(selectedTimeSlots[day][0], 'HH:mm');
+      const endTime = moment(selectedTimeSlots[day][selectedTimeSlots[day].length - 1], 'HH:mm');
+      const duration = moment.duration(endTime.diff(startTime));
+      dayDurations[day] = `${duration.hours()}h ${duration.minutes()}m`;
+    }
+  });
+
   return (
     <div className="schedule-screen">
       <Calendar
@@ -59,8 +70,9 @@ function ScheduleScreen() {
         })}
       />
 
-      <div className="selected-time-slots">
-        <h2>Selected Time Slots</h2>
+
+      <div className="day-durations">
+        <h2>Total free time per day</h2>
         <table>
           <thead>
             <tr>
@@ -72,22 +84,19 @@ function ScheduleScreen() {
             </tr>
           </thead>
           <tbody>
-            {timeSlots.map((timeSlot) => (
-              <tr key={timeSlot}>
-                {daysOfWeek.map((day) => (
-                  <td key={day}>
-                    {selectedTimeSlots[day] && selectedTimeSlots[day].includes(timeSlot) ? timeSlot : ''}
-                  </td>
-                ))}
-              </tr>
-            ))}
+            <tr>
+              {daysOfWeek.map((day) => (
+                <td key={day}>
+                  {dayDurations[day] ? dayDurations[day] : ''}
+                </td>
+              ))}
+            </tr>
           </tbody>
         </table>
       </div>
-      
+
       <Link to="/Workout-Plan">View Workout Plan</Link>
     </div>
-    
   );
 }
 
