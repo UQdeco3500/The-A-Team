@@ -3,9 +3,21 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import workoutData from './WorkoutData.json';
+
 
 function ScheduleScreen() {
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  const findWorkoutForDay = (day, duration) => {
+    if (workoutData[day]) {
+      const workout = workoutData[day].find((entry) => entry.duration === duration);
+      if (workout) {
+        return workout.workout;
+      }
+    }
+    return 'No workout found'; // You can customize this message
+  };
 
   const timeSlots = [];
   for (let hour = 8; hour <= 20; hour++) {
@@ -71,6 +83,7 @@ function ScheduleScreen() {
       />
 
 
+
       <div className="day-durations">
         <h2>Total free time per day</h2>
         <table>
@@ -87,7 +100,15 @@ function ScheduleScreen() {
             <tr>
               {daysOfWeek.map((day) => (
                 <td key={day}>
-                  {dayDurations[day] ? dayDurations[day] : ''}
+                  {dayDurations[day] ? (
+                    <>
+                      {dayDurations[day]}
+                      <br />
+                      Workout: {findWorkoutForDay(day, dayDurations[day])}
+                    </>
+                  ) : (
+                    ''
+                  )}
                 </td>
               ))}
             </tr>
