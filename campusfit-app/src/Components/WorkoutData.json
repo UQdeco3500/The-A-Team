@@ -1,14 +1,13 @@
 {
     "Sunday": [
-      {  "duration": "3h 00m", "workout": "Gym Workout(Leg)" },
-      {  "duration": "1h 00m", "workout": "Run" },
+      {  "duration": "3h 0m", "workout": "Gym Workout(Leg)" },
+      {  "duration": "1h 0m", "workout": "Run" },
       { "duration": "0h 30m", "workout": "HIIT" }
     ],
     "Monday": [
       {  "duration": "0h 30m", "workout": "HIIT" },
-      {  "duration": "1h 00m", "workout": "Run" },
-      {  "duration": "3h 00m", "workout": "Gym Workout(Chest)" }
-      
+      {  "duration": "1h 0m", "workout": "Run" },
+      {  "duration": "3h 0m", "workout": "Gym Workout(Chest)" }
     ]
   }
   

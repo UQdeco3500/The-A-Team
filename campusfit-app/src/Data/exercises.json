@@ -1,0 +1,157 @@
+{
+    "exercises": [
+      {
+        "name": "Push-ups",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Jumping Jacks",
+        "duration_minutes": 10
+      },
+      {
+        "name": "Plank",
+        "duration_minutes": 3
+      },
+      {
+        "name": "Squats",
+        "duration_minutes": 8
+      },
+      {
+        "name": "Lunges",
+        "duration_minutes": 6
+      },
+      {
+        "name": "Burpees",
+        "duration_minutes": 7
+      },
+      {
+        "name": "Yoga",
+        "duration_minutes": 15
+      },
+      {
+        "name": "Cycling",
+        "duration_minutes": 30
+      },
+      {
+        "name": "Dumbbell Curls",
+        "duration_minutes": 12
+      },
+      {
+        "name": "High Knees",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Chest Press",
+        "duration_minutes": 8
+      },
+      {
+        "name": "Leg Press",
+        "duration_minutes": 10
+      },
+      {
+        "name": "Shoulder Press",
+        "duration_minutes": 6
+      },
+      {
+        "name": "Bicep Curls",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Tricep Dips",
+        "duration_minutes": 7
+      },
+      {
+        "name": "Side Plank",
+        "duration_minutes": 4
+      },
+      {
+        "name": "Deadlifts",
+        "duration_minutes": 9
+      },
+      {
+        "name": "Jump Rope",
+        "duration_minutes": 15
+      },
+      {
+        "name": "Mountain Climbers",
+        "duration_minutes": 6
+      },
+      {
+        "name": "Bench Press",
+        "duration_minutes": 8
+      },
+      {
+        "name": "Russian Twists",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Calf Raises",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Leg Curls",
+        "duration_minutes": 10
+      },
+      {
+        "name": "Hip Thrusts",
+        "duration_minutes": 7
+      },
+      {
+        "name": "Dumbbell Rows",
+        "duration_minutes": 8
+      },
+      {
+        "name": "Flutter Kicks",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Pull-ups",
+        "duration_minutes": 9
+      },
+      {
+        "name": "Jump Squats",
+        "duration_minutes": 7
+      },
+      {
+        "name": "Sit-ups",
+        "duration_minutes": 6
+      },
+      {
+        "name": "Bicycle Crunches",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Wall Sit",
+        "duration_minutes": 4
+      },
+      {
+        "name": "Jump Lunges",
+        "duration_minutes": 7
+      },
+      {
+        "name": "Incline Push-ups",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Dips",
+        "duration_minutes": 6
+      },
+      {
+        "name": "Leg Raises",
+        "duration_minutes": 5
+      },
+      {
+        "name": "Box Jumps",
+        "duration_minutes": 8
+      },
+      {
+        "name": "Kettlebell Swings",
+        "duration_minutes": 9
+      },
+      {
+        "name": "Battle Ropes",
+        "duration_minutes": 10
+      }
+    ]
+  }
+  

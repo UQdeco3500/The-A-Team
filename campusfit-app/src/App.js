@@ -6,6 +6,7 @@ import UploadScreen from './Components/UploadScreen';
 import ScheduleScreen from './Components/Schedule';
 import WorkoutPlan from './Components/WorkoutScreen';
 function App() {
+  const workoutPlan = {};
   return (
     <Router>
       <header className='header'>
@@ -18,9 +19,9 @@ function App() {
       <main>
       <Routes>
           <Route path="/" element={<HomeScreen />} />
-          <Route path="/Upload" element={<UploadScreen/>}/>
-          <Route path="/Schedule" element={<ScheduleScreen/>}/>
-          <Route path="/Workout-Plan" element={<WorkoutPlan/>}/>
+          <Route path="/Upload" element={<UploadScreen />} />
+          <Route path="/Schedule" element={<ScheduleScreen workoutPlan={workoutPlan}/>} />
+          <Route path="/Workout-Plan" element={<WorkoutPlan workoutPlan={workoutPlan} />} />
         </Routes>
       </main>
     </Router>

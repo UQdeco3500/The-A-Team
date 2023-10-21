@@ -4,20 +4,39 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 import workoutData from './WorkoutData.json';
+import exercisesData from '../Data/exercises.json';
 
-
-function ScheduleScreen() {
+function ScheduleScreen(props) {
+  const workoutPlan = {};
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  console.log(workoutData.Sunday[0].duration);
 
+  const convertToMinutes = (duration) => {
+    const [hours, minutes] = duration.split('h').map((item) => item.trim());
+    const totalMinutes = parseInt(hours) * 60 + parseInt(minutes.replace('m', ''));
+    return totalMinutes;
+  };
+  
   const findWorkoutForDay = (day, duration) => {
-    if (workoutData[day]) {
-      const workout = workoutData[day].find((entry) => entry.duration === duration);
-      if (workout) {
-        return workout.workout;
+    workoutPlan[day] = []; // Initialize as an array
+    let totalMinutes = convertToMinutes(duration);
+    console.log(totalMinutes);
+    if (exercisesData && exercisesData.exercises) {
+      const shuffledExercises = exercisesData.exercises.sort(() => Math.random() - 0.5);
+      for (const exercise of shuffledExercises) {
+        if (exercise.duration_minutes <= totalMinutes) {
+          workoutPlan[day].push(exercise.name); // Push into the array
+          totalMinutes -= exercise.duration_minutes;
+          if (totalMinutes <= 0) break;
+        }
       }
     }
-    return 'No workout found'; // You can customize this message
+    console.log(workoutPlan);
+    const workoutPlanArray = workoutPlan[day].length > 0 ? [{ day, workout: workoutPlan[day] }] : [{ day, workout: ['No workout found'] }];
+    return workoutPlanArray;
   };
+  
+  
 
   const timeSlots = [];
   for (let hour = 8; hour <= 20; hour++) {
@@ -31,15 +50,15 @@ function ScheduleScreen() {
 
   const handleSelectSlot = ({ start, end }) => {
     const startTime = moment(start).format('HH:mm');
-    const endTime = moment(end).format('HH:mm');
+    const endTime = moment(end).format('HH:mm'); // Add 30 minutes to include the last slot
     const selectedRange = [];
     let currentTime = startTime;
-    while (currentTime < endTime) {
+    while (currentTime <= endTime) {
       selectedRange.push(currentTime);
       const [hour, minute] = currentTime.split(':').map(Number);
       currentTime = moment({ hour, minute }).add(30, 'minutes').format('HH:mm');
     }
-
+  
     // Create a new object to update the selected time slots for the specific day
     setSelectedTimeSlots((prevSelectedTimeSlots) => {
       const updatedSelectedTimeSlots = { ...prevSelectedTimeSlots };
@@ -48,6 +67,7 @@ function ScheduleScreen() {
       return updatedSelectedTimeSlots;
     });
   };
+  
 
   const localizer = momentLocalizer(moment);
 
@@ -66,7 +86,7 @@ function ScheduleScreen() {
     <div className="schedule-screen">
       <Calendar
         localizer={localizer}
-        events={[]} // You can use events for custom events if needed
+        events={[]}
         views={['week']}
         selectable
         onSelectSlot={handleSelectSlot}
@@ -81,9 +101,6 @@ function ScheduleScreen() {
           className: `custom-day-header ${daysOfWeek[date.getDay()]}`,
         })}
       />
-
-
-
       <div className="day-durations">
         <h2>Total free time per day</h2>
         <table>
@@ -101,11 +118,15 @@ function ScheduleScreen() {
               {daysOfWeek.map((day) => (
                 <td key={day}>
                   {dayDurations[day] ? (
-                    <>
+                    <div>
                       {dayDurations[day]}
                       <br />
-                      Workout: {findWorkoutForDay(day, dayDurations[day])}
-                    </>
+                      {findWorkoutForDay(day, dayDurations[day]).map((item, index) => (
+                        <div key={index}>
+                          {item.day}: {item.workout.join(', ')}
+                        </div>
+                      ))}
+                    </div>
                   ) : (
                     ''
                   )}
@@ -115,10 +136,17 @@ function ScheduleScreen() {
           </tbody>
         </table>
       </div>
-
-      <Link to="/Workout-Plan">View Workout Plan</Link>
+      <Link
+  to={{
+    pathname: '/Workout-Plan',
+    state: { workoutPlan: workoutPlan }, // Pass workoutPlan as the state
+  }}
+>
+  View Workout Plan
+</Link>
     </div>
   );
+  
 }
 
 export default ScheduleScreen;
