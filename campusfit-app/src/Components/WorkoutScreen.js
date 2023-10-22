@@ -1,8 +1,9 @@
 import React from 'react';
 
 export default function WorkoutScreen(props) {
-  const { workoutPlan } = props;
-
+  console.log("props",props)
+  const { workoutPlan } = props
+  console.log('hello',workoutPlan);
   const days = Object.keys(workoutPlan);
   const exercises = days.reduce((acc, day) => {
     workoutPlan[day].forEach((exercise, index) => {

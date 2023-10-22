@@ -7,7 +7,7 @@ import workoutData from './WorkoutData.json';
 import exercisesData from '../Data/exercises.json';
 
 function ScheduleScreen(props) {
-  const workoutPlan = {};
+  let { workoutPlan } = props
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   console.log(workoutData.Sunday[0].duration);
 

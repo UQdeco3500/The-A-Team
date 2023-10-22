@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #000000;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
 }
 
 .header {
-  background-color:  #ffffff;
+  background-color:  #1f1010;
   display: flex; /* Use Flexbox */
   align-items: center; /* Vertically center the items */
   justify-content: space-between; /* Space between the items */
@@ -47,7 +47,7 @@
 }
 
 .logoCampusfit {
-  color: #000000;
+  color: #fff;
   text-align: center;
   font-family: Lemon;
   font-size: 40px;
@@ -59,7 +59,7 @@
   position: fixed;
   top: 15%;
   left: 32%;
-  color: #000000;
+  color: #fff;
   text-align: center;
   font-family: Lemon;
   font-size: 30px;
@@ -70,7 +70,7 @@
 .headerButtons {
   text-decoration: none;
   position: relative;
-  color: #000000;
+  color: #fff;
   text-align: center;
   font-family: Jaldi;
   font-size: 32px;
@@ -103,7 +103,7 @@
 
 /* Set font color to red for day headers */
 .custom-day-header {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 /* Style individual day cells in the calendar */
