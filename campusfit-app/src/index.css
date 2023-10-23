@@ -5,15 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('../public/football.jpg');
+  background-size: cover; /* This will make the image cover the entire container */
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keep the background image fixed */
+  background-position: center center;
+  /* Additional background properties like background-color if the image doesn't cover the entire page */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-body{
-  background: #140303;
-}
-
-

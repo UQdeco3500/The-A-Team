@@ -1,4 +1,5 @@
 .App {
+  overflow: hidden;
   text-align: center;
 }
 
@@ -21,7 +22,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
@@ -38,42 +39,45 @@
 }
 
 .header {
-  background-color:  #1f1010;
-  display: flex; /* Use Flexbox */
-  align-items: center; /* Vertically center the items */
-  justify-content: space-between; /* Space between the items */
+  z-index: 3;
+  
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
   padding-left: 5%;
   padding-right: 5%;
 }
 
 .logoCampusfit {
-  color: #fff;
+  color: #000000;
   text-align: center;
   font-family: Lemon;
   font-size: 40px;
+  text-decoration: none;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 .textHome {
-  position: fixed;
-  top: 15%;
-  left: 32%;
-  color: #fff;
-  text-align: center;
+  align-items: center;
+ 
+  color: #000000;
+  position: relative;
   font-family: Lemon;
-  font-size: 30px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
+
 .headerButtons {
+  z-index: 3;
   text-decoration: none;
   position: relative;
-  color: #fff;
+  color:#000000;
   text-align: center;
   font-family: Jaldi;
-  font-size: 32px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -81,42 +85,38 @@
   border: none;
   cursor: pointer;
 }
+.centered-container {
+  transform:   translate(0%, -5%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
 
 .roundShapeButton {
-  position: fixed;
-  top: 69%;
-  left: 43.9%;
+  position: absolute;
+  top: 95%;
+  left: 46%;
   width: 100px;
   height: 100px;
-  background-color: #00FF00;
+  background-color: #ffffff;
   border-radius: 50%; 
+  align-items: center;
 }
-/* App styling */
-/* ... Your existing styles ... */
-
-/* Custom styling for ScheduleScreen and react-big-calendar */
-
-/* Set background color to black */
-.schedule-screen {
-  background-color: white;
+.plus{
+  color: #000000;
+  font-family: Lemon;
+  font-size: 40px;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position:'relative';
+  align-items: center;
 }
 
-/* Set font color to red for day headers */
 .custom-day-header {
   color: rgb(0, 0, 0);
+  
 }
-
-/* Style individual day cells in the calendar */
-.rbc-day-bg {
-  background-color: #f7f7f7;
-  border: 1px solid green;
-}
-
-/* Style the selected time slots */
-.selected-time-slot {
-  /* //color-scheme:green ; */
-  background-color: #00FF00;
-  color: red;
-}
-
-/* Additional custom styles can be added here */

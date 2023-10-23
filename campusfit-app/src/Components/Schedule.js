@@ -32,7 +32,7 @@ function ScheduleScreen(props) {
       }
     }
     console.log(workoutPlan);
-    const workoutPlanArray = workoutPlan[day].length > 0 ? [{ day, workout: workoutPlan[day] }] : [{ day, workout: ['No workout found'] }];
+    const workoutPlanArray =  [{ day, duration }]
     return workoutPlanArray;
   };
   
@@ -119,11 +119,10 @@ function ScheduleScreen(props) {
                 <td key={day}>
                   {dayDurations[day] ? (
                     <div>
-                      {dayDurations[day]}
                       <br />
                       {findWorkoutForDay(day, dayDurations[day]).map((item, index) => (
                         <div key={index}>
-                          {item.day}: {item.workout.join(', ')}
+                          {item.duration}
                         </div>
                       ))}
                     </div>
@@ -136,7 +135,7 @@ function ScheduleScreen(props) {
           </tbody>
         </table>
       </div>
-      <Link
+      <Link style={{background:'white ',borderRadius:'10px',textDecoration:'none',fontSize:'40px',color:'black'}}
   to={{
     pathname: '/Workout-Plan',
     state: { workoutPlan: workoutPlan }, // Pass workoutPlan as the state
